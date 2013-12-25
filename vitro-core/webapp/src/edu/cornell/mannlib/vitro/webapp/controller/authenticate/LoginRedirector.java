@@ -140,8 +140,10 @@ public class LoginRedirector {
 	public String assembleWelcomeMessage() {
 		if (!canSeeSiteAdminPage() && !isSelfEditorWithIndividual()) {
 			// A special message for unrecognized self-editors:
-			return "You have logged in, "
-					+ "but the system contains no profile for you.";
+			//return "You have logged in, "
+			//		+ "but the system contains no profile for you.";
+			return "SEAD could not match your email with existing profile. "
+				+ "If you have an existing profile please send its URL to seadva@indiana.edu ";
 		}
 
 		String backString = "";
