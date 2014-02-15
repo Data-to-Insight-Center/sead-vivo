@@ -36,15 +36,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import edu.cornell.mannlib.vitro.webapp.auth.permissions.PermissionSetsLoader;
 import edu.cornell.mannlib.vitro.webapp.beans.UserAccount;
 import edu.cornell.mannlib.vitro.webapp.beans.UserAccount.Status;
+import edu.cornell.mannlib.vitro.webapp.controller.accounts.admin.UserAccountsProfileCreator;
+import edu.cornell.mannlib.vitro.webapp.beans.SelfEditingConfiguration;
 import edu.cornell.mannlib.vitro.webapp.controller.VitroRequest;
 import edu.cornell.mannlib.vitro.webapp.controller.accounts.UserAccountsPage;
 import edu.cornell.mannlib.vitro.webapp.controller.authenticate.Authenticator;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.ResponseValues;
 import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.TemplateResponseValues;
+import edu.cornell.mannlib.vitro.webapp.dao.InsertException;
 
 /**
  * Handle the first-time login of an Externally Authenticated user who has no
@@ -55,6 +60,8 @@ import edu.cornell.mannlib.vitro.webapp.controller.freemarker.responsevalues.Tem
  * will have the info in hidden fields.
  */
 public class UserAccountsFirstTimeExternalPage extends UserAccountsPage {
+	
+	private static final Log log = LogFactory.getLog(UserAccountsFirstTimeExternalPage.class);
 	private static final String PARAMETER_SUBMIT = "submit";
 	private static final String PARAMETER_EXTERNAL_AUTH_ID = "externalAuthId";
 	private static final String PARAMETER_AFTER_LOGIN_URL = "afterLoginUrl";
@@ -229,8 +236,29 @@ public class UserAccountsFirstTimeExternalPage extends UserAccountsPage {
 		u.setPermissionSetUris(Collections
 				.singleton(PermissionSetsLoader.URI_SELF_EDITOR));
 
-		userAccountsDao.insertUserAccount(u);
+		String uri = userAccountsDao.insertUserAccount(u);
+		UserAccount addedAccount = userAccountsDao.getUserAccountByUri(uri);
+		String associatedProfileUri = "";
+		String personProfileClassUri  ="http://xmlns.com/foaf/0.1/Person";
+		// Associate Person profile by default
+		try {
+			
+			String newProfileUri = UserAccountsProfileCreator
+					.createProfile(indDao, dpsDao, personProfileClassUri,
+							addedAccount);
+			associatedProfileUri = newProfileUri;
+			log.debug(associatedProfileUri);
+		} catch (InsertException e) {
+			log.error("Failed to create new profile of class '"
+					+ personProfileClassUri + "' for user '"
+					+ addedAccount.getEmailAddress() + "'");
+		}
 
+		SelfEditingConfiguration.getBean(vreq)
+				.associateIndividualWithUserAccount(indDao, dpsDao,
+						addedAccount, associatedProfileUri);
+
+		strategy.notifyUser(u);
 		strategy.notifyUser(u);
 
 		return u;
