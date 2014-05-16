@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task>
+    <!--INPUT -->
+    <Param name="inputModel">matched-data.model.xml</Param>
+
+    <!--  VIVO -->
+    <Param name="vivoModel">vivo.model.xml</Param>
+
+    <!--  OPTIONS -->
+    <!--<Param name="oldNamespace">http://www.orcid.org/ns/orcid/profile/</Param>-->
+    <Param name="oldNamespace">http://www.orcid.org/ns/orcid/author/</Param>
+    <Param name="newNamespace">http://d2i.indiana.edu/individual/</Param>
+</Task>

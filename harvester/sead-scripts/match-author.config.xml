@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task>
+    <!--INPUT -->
+    <Param name="input-config">harvested-data.model.xml</Param>
+
+    <!--SCORING DATA -->
+    <Param name="score-config">score-data.model.xml</Param>
+
+    <!--OUTPUT -->
+    <Param name="output-config">matched-data.model.xml</Param>
+
+    <!--OPTIONS -->
+    <Param name="rename">true</Param>
+    <Param name="threshold">0.55</Param>
+    <!--<Param name="threshold">0.25</Param>-->
+    <Param name="clear-type-and-literals">true</Param>
+</Task>

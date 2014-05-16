@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Model>
+    <Param name="type">sdb</Param>
+    <Param name="dbLayout">layout2</Param>
+    <Param name="dbClass">com.mysql.jdbc.Driver</Param>
+    <Param name="dbType">MySQL</Param>
+    <Param name="dbUrl">jdbc:mysql://127.0.0.1:3306/vivotest</Param>
+    <Param name="modelName">http://vitro.mannlib.cornell.edu/default/vitro-kb-2</Param>
+
+    <Param name="dbUser">vivotu</Param>
+    <Param name="dbPass">vivotupw</Param>
+    <!--Param name="namespace">http://vivo.mydomain.edu/individual/</Param-->
+    <Param name="namespace">http://d2i.indiana.edu/individual/</Param>
+</Model>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2010-2011 VIVO Harvester Team. For full list of contributors, please see the AUTHORS file provided.
+  All rights reserved.
+  This program and the accompanying materials are made available under the terms of the new BSD license which accompanies this distribution, and is available at http://www.opensource.org/licenses/bsd-license.html
+-->
+<Task>
+    <!--INPUT -->
+    <Param name="inputJena-config">harvested-data.model.xml</Param>
+
+    <!--VIVO INPUT -->
+    <Param name="vivoJena-config">vivo.model.xml</Param>
+
+    <!--SCORING DATA OUTPUT -->
+    <Param name="score-config">score-data.model.xml</Param>
+    <Param name="tempJenaDir">data/temp-score-model</Param>
+    <!--<Param name="namespace">http://www.orcid.org/ns/orcid/profile/</Param>-->
+    <Param name="namespace">http://www.orcid.org/ns/orcid/author</Param>
+    <Param name="matchThreshold">0.35</Param>
+
+    <!--<Param name="algorithms">fname=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>-->
+    <!--<Param name="weights">fname=0.35</Param>-->
+    <!--<Param name="inputJena-predicates">fname=http://xmlns.com/foaf/0.1/family-name</Param>-->
+    <!--<Param name="vivoJena-predicates">fname=http://xmlns.com/foaf/0.1/lastName</Param>-->
+
+    <!--COMPARISIONS -->
+    <!--FIRST NAME-->
+    <Param name="algorithms">fname=org.vivoweb.harvester.score.algorithm.NameCompare</Param>
+    <Param name="weights">fname=0.20</Param>
+    <Param name="inputJena-predicates">fname=http://xmlns.com/foaf/0.1/firstName</Param>
+    <Param name="vivoJena-predicates">fname=http://xmlns.com/foaf/0.1/firstName</Param>
+
+    <!--MIDDLE NAME-->
+    <!--<Param name="algorithms">mname=org.vivoweb.harvester.score.algorithm.NameCompare</Param>-->
+    <!--<Param name="weights">mname=0.15</Param>-->
+    <!--<Param name="inputJena-predicates">mname=http://vivoweb.org/ontology/core#middleName</Param>-->
+    <!--<Param name="vivoJena-predicates">mname=http://vivoweb.org/ontology/core#middleName</Param>-->
+
+</Task>

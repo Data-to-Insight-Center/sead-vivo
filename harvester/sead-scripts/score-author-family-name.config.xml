@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task>
+    <!--INPUT -->
+    <Param name="inputJena-config">harvested-data.model.xml</Param>
+
+    <!--VIVO INPUT -->
+    <Param name="vivoJena-config">vivo.model.xml</Param>
+
+    <!--SCORING DATA OUTPUT -->
+    <Param name="score-config">score-data.model.xml</Param>
+
+    <Param name="tempJenaDir">data/temp-score-model</Param>
+    <Param name="namespace">http://www.orcid.org/ns/orcid/author</Param>
+    <!--<Param name="namespace">http://www.orcid.org/ns/orcid/profile/</Param>-->
+
+    <!--COMPARISIONS -->
+    <!--FAMILY NAME-->
+    <Param name="algorithms">lname=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
+    <Param name="weights">lname=0.35</Param>
+    <Param name="inputJena-predicates">lname=http://xmlns.com/foaf/0.1/lastName</Param>
+    <Param name="vivoJena-predicates">lname=http://xmlns.com/foaf/0.1/lastName</Param>
+</Task>
+

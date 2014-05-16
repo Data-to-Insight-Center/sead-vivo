@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Task>
+    <Param name="inputJena-config">harvested-data.model.xml</Param>
+    <Param name="vivoJena-config">vivo.model.xml</Param>
+    <Param name="score-config">score-data.model.xml</Param>
+    <Param name="tempJenaDir">data/temp-score-model</Param>
+    <Param name="namespace">http://www.orcid.org/ns/orcid/author</Param>
+    <!--EMAIL-->
+    <Param name="algorithms">email=org.vivoweb.harvester.score.algorithm.EqualityTest</Param>
+    <Param name="weights">email=1.0</Param>
+    <Param name="inputJena-predicates">email=http://vivoweb.org/ontology/score#email</Param>
+    <Param name="vivoJena-predicates">email=http://vivoweb.org/ontology/score#email</Param>
+</Task>
