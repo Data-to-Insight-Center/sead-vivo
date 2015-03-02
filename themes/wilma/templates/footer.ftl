@@ -26,34 +26,51 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-</div> <!-- #wrapper-content -->
 
-<footer role="contentinfo">
-    <p class="copyright">
-        <#if copyright??>
-            <small>&copy;${copyright.year?c}
-            <#if copyright.url??>
-                <a href="${copyright.url}" title="copyright">${copyright.text}</a>
-            <#else>
-                ${copyright.text}
-            </#if>
-             | <a class="terms" href="${urls.termsOfUse}" title="terms of use">Terms of Use</a></small> | 
-        </#if>
-        Powered by <a class="powered-by-vivo" href="http://vivoweb.org" target="_blank" title="powered by VIVO"><strong>VIVO</strong></a>
-        <#if user.hasRevisionInfoAccess>
-             | Version <a href="${version.moreInfoUrl}" title="version">${version.label}</a>
-        </#if>
-    </p>
-    
-    <nav role="navigation">
-        <ul id="footer-nav" role="list">
-            <li role="listitem"><a href="${urls.about}" title="about">About</a></li>
-            <#if urls.contact??>
-                <li role="listitem"><a href="${urls.contact}" title="contact us">Contact Us</a></li>
-            </#if> 
-            <li role="listitem"><a href="http://www.vivoweb.org/support" target="blank" title="support">Support</a></li>
-        </ul>
-    </nav>
-</footer>
+</div>
+</div> <!-- #wrapper-content -->
+</div>
+
+<footer id="colophon" class="clearfix">	
+			<div class="footer-socket-wrapper clearfix">
+				<h1 class="menu-toggle">Footer</h1>
+				<div class="inner-wrap">
+					<div class="footer-socket-area">
+						<div class="copyright">
+							&nbsp;
+        					<#if copyright??>
+            					<small>&copy;${copyright.year?c}
+            				<#if copyright.url??>
+                				<a href="${copyright.url}" title="copyright">${copyright.text}</a>
+            				<#else>
+                				${copyright.text}
+            				</#if>
+             | 					<a class="terms" href="${urls.termsOfUse}" title="terms of use">Terms of Use</a></small> | 
+        					</#if>
+        						Powered by <a class="powered-by-vivo" href="http://vivoweb.org" target="_blank" title="powered by VIVO"><strong>VIVO</strong></a>
+        					<#if user.hasRevisionInfoAccess>
+             | 					Version <a href="${version.moreInfoUrl}" title="version">${version.label}</a>
+        					</#if>
+						</div>	
+					</div>				
+				</div>
+			</div>
+			<div class="footer-socket-wrapper clearfix">
+				<div class="inner-wrap">
+					<div class="footer-socket-area">
+						<div class="copyright"><img style="vertical-align: middle" id="nsf" src="http://sead-data.net/wp-content/uploads/2014/06/nsf2.png" alt="NSF " width="30px" height="30px">SEAD is funded by the National Science Foundation under cooperative agreement #OCI0940824.</div>						
+						<nav class="small-menu">
+							<div class="menu-footer-menu-container">
+								<ul id="menu-footer-menu" class="menu">	
+									<a href="http://sead-data.net/contactus/">Contact Us</a>
+								</li>
+								</ul>
+							</div>	
+						</nav>	
+					</div>
+				</div>
+			</div>			
+		</footer>
+
 
 <#include "scripts.ftl">

@@ -30,6 +30,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 <!-- vitro base styles (application-wide) -->
 <link rel="stylesheet" href="${urls.base}/css/vitro.css" />
+<link rel="stylesheet" href="${urls.base}/css/um-style.css" />
+<link rel="stylesheet" href="${urls.base}/css/seadmenu.css" />
 
 ${stylesheets.list()}
 

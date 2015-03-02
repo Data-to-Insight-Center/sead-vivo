@@ -26,13 +26,52 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<nav role="navigation">
-    <ul id="main-nav" role="list">
-        <#list menu.items as item>
-            <li role="listitem"><a href="${item.url}" title="menu item" <#if item.active> class="selected" </#if>>${item.linkText}</a></li>
-        </#list>
-    </ul>
-</nav>
+	<!--header navigation begin-->
+	<div id="header-navigation">
+		<nav id="site-navigation" class="main-navigation" role="navigation">
+		   		<h1 class="menu-toggle">Menu</h1>
+	 			<div class="menu-global-navigation-container">
+	 				<ul id="menu-global-navigation" class="menunav-menu">
+	 					<li class="menu-item "><a href="http://sead-data.net/">Home</a></li>
+						<li class="menu-item  menu-item-has-children "><a href="http://sead-data.net/about/">About</a>
+						<ul class="sub-menu">
+							<li class="menu-item"><a href="http://sead-data.net/about/sead-team/">Project Team</a></li>
+							<li class="menu-item"><a href="http://sead-data.net/about/advisory-board/">Advisory Board</a></li>
+							<li class="menu-item"><a href="http://sead-data.net/about/publicationspresentations/">Publications &amp; Presentations</a></li>
+							<li class="menu-item"><a href="http://sead-data.net/about/newsevents/">News &amp; Events</a></li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-has-children"><a href="http://sead-data.net/feature-tour/">Features Tour</a>
+						<ul class="sub-menu">
+							<li class="menu-item"><a href="http://sead-data.net/feature-tour/tools-in-development/">Tools in Development</a></li>
+						</ul>
+					</li>
+					<li class="menu-item"><a href="https://sead.ncsa.illinois.edu/projects/">Project Spaces</a></li>
+					<li class="menu-item "><a href="http://seadva.d2i.indiana.edu:8181/sead-access/">Virtual Archive</a></li>
+					<li class="menu-item  current-menu-item  menu-item-has-children"><a href="${urls.base}">Research Network</a>
+						<ul class="sub-menu">
+							<li class="menu-item "><a href="${urls.base}/people">People</a></li>
+							<li class="menu-item "><a href="${urls.base}/organizations">Organizations</a></li>
+							<li class="menu-item "><a href="${urls.base}/research">Research</a></li>
+							<li class="menu-item "><a href="${urls.base}/events">Events</a></li>
+						</ul>
+					</li>
+					<li class="menu-item menu-item-has-children"><a href="http://sead-data.net/help/">Help</a>
+						<ul class="sub-menu">
+							<li  class="menu-item"><a href="http://sead-data.net/help/faq/">FAQ</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div> 
+		</nav>
+	</div>
+	<!--header navigation end-->    
+
+</div> <!-- #header-left-section -->
+</div> <!-- header-text-nav-wrap -->
+
+</header>
+<div style="height: 600px; width: 1200px;margin:auto;}">
 
 <div id="wrapper-content" role="main">        
     <#if flash?has_content>

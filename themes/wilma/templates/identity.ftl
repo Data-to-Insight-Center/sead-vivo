@@ -26,65 +26,72 @@ OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
-<header id="branding" role="banner">
-    <h1 class="vivo-logo"><a title="VIVO | enabling national networking of scientists" href="${urls.home}"><span class="displace">${siteName}</span></a></h1>
-    <#-- Since we are using a graphic text for the tagline, we won't render ${siteTagline}
-    <#if siteTagline?has_content>
-        <em>${siteTagline}</em>
-    </#if>-->
-
-    <nav role="navigation">
-        <ul id="header-nav" role="list">
-            <li role="listitem"><a href="${urls.index}" title="index">Index</a></li>
-            <#if user.loggedIn>
-                <#-- COMMENTING OUT THE EDIT PAGE LINK FOR RELEASE 1.5. WE NEED TO IMPLEMENT THIS IN A MORE 
-                     USER FRIENDLY WAY. PERHAPS INCLUDE A LINK ON THE PAGES THEMSELVES AND DISPLAY IF THE
-                     USER IS A SITE ADMIN. tlw72
-                     
-                     <#if (page??) && (page?is_hash || page?is_hash_ex) && (page.URLToEditPage??) >
-                        <li role="listitem"><a href="${page.URLToEditPage}" title="edit page">Edit Page</a></li>
-                     </#if>
-                -->
-                <#if user.hasSiteAdminAccess>
-                    <li role="listitem"><a href="${urls.siteAdmin}" title="site admin">Site Admin</a></li>
-                </#if>
-                    <li>
-                        <ul class="dropdown">
-                            <li id="user-menu"><a href="#" title="user">${user.loginName}</a>
-                                <ul class="sub_menu">
-                                     <#if user.hasProfile>
-                                         <li role="listitem"><a href="${user.profileUrl}" title="my profile">My profile</a></li>
-                                     </#if>
-                                     <#if urls.myAccount??>
-                                         <li role="listitem"><a href="${urls.myAccount}" title="my account">My account</a></li>
-                                     </#if>
-                                     <li role="listitem"><a href="${urls.logout}" title="log out">Log out</a></li>
-                                </ul>
-                            </li>
-                         </ul>
-                     </li>
-                     
-
-                
-                ${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
-                
-            <#else>
-                <li role="listitem"><a class="log-out" title="log in to manage this site" href="${urls.login}">Log in</a></li>
-            </#if>
-        </ul>
-        
-    </nav>
-    
-    <section id="search" role="region">
-        <fieldset>
-            <legend>Search form</legend>
+	<div id="page" class="hfeed site">
+		<header id="masthead" class="site-header clearfix">
+			<div id="header-text-nav-wrap" class="clearfix">
+	
+				<!-- #header-logo-image -->
+				<div id="header-left-section">
+					<div id="header-logo-image">
+						<a href="${urls.home}" title="SEAD" rel="home"><img src="http://sead-data.net/wp-content/uploads/2014/06/logo.png" alt="SEAD"></a>
+					</div><!-- #header-logo-image -->
+	
+	    			<nav role="navigation">
+        				<ul id="header-nav" role="list">
+            				<li role="listitem"><a href="${urls.index}" title="index">Index</a></li>
             
-            <form id="search-form" action="${urls.search}" name="search" role="search" accept-charset="UTF-8" method="POST"> 
-                <div id="search-field">
-                    <input type="text" name="querytext" class="search-vivo" value="${querytext!}" autocapitalize="off" />
-                    <input type="submit" value="Search" class="search">
-                </div>
-            </form>
-        </fieldset>
-    </section>
-</header>
+            				<#if user.loggedIn>
+                				<#if user.hasSiteAdminAccess>
+                    				<li role="listitem"><a href="${urls.siteAdmin}" title="site admin">Site Admin</a></li>
+                				</#if>
+                    			<li id="user-menu">${user.loginName}</li>
+                    			<#if user.hasProfile>
+                      				<li role="listitem"><a href="${user.profileUrl}" title="my profile">My profile</a></li>
+                    			</#if>
+                    			<#if urls.myAccount??>
+                        			<li role="listitem"><a href="${urls.myAccount}" title="my account">My account</a></li>
+                        		</#if>
+                        		<li role="listitem"><a href="${urls.logout}" title="log out">Log out</a></li>
+                        
+                				${scripts.add('<script type="text/javascript" src="${urls.base}/js/userMenu/userMenuUtils.js"></script>')}
+                
+            				<#else>
+                				<li role="listitem"><a class="log-out" title="log in to manage this site" href="${urls.login}">Log in</a></li>
+            				</#if>
+        			</ul>
+    			</nav>
+
+				<!-- #header-right-section --> 
+				<div id="header-right-section">
+					<div id="header-right-sidebar" class="clearfix">			
+						<aside id="cnss_widget-3" class="widget widget_cnss_widget">
+							<table class="cnss-social-icon" style="width:138px" border="0" cellspacing="0" cellpadding="0">
+								<tbody>
+									<tr>
+										<td>
+											<a target="_blank" title="facebook" href="https://www.facebook.com/SEADDataNet">
+											<img src="http://sead-data.net/wp-content/uploads/1403285144_facebook.png" border="0" width="32" height="32" alt="facebook">
+											</a>
+										</td>
+										<td >
+											<a target="_blank" title="twitter" href="https://twitter.com/SEADdatanet">
+											<img src="http://sead-data.net/wp-content/uploads/1403285215_twitter.png" border="0" width="32" height="32" alt="twitter">
+											</a>
+										</td>
+										<td>
+											<a target="_blank" title="Slideshare" href="http://www.slideshare.net/SEADdatanet">
+											<img src="http://sead-data.net/wp-content/uploads/1403285311_slidershare.png" border="0" width="32" height="32" alt="Slideshare">
+											</a>
+										</td>
+										<td>
+											<a target="_blank" title="Rss Feed" href="http://www.sead-data.net/?cat=11,12,13,29,30,31&amp;feed=rss2">
+											<img src="http://sead-data.net/wp-content/uploads/1415982481_rss.png" border="0" width="32" height="32" alt="Rss Feed" style="opacity: 1;">
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</aside>
+					</div> <!-- header-right-sidebar -->
+				</div> <!-- #header-right-section --> 
+                

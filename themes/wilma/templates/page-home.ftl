@@ -35,7 +35,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         <#include "head.ftl">
     </head>
     
-    <body class="${bodyClasses!}" onload="${bodyOnload!}">
+    <body class="home page wide-1218" onload="${bodyOnload!}">
         <#include "identity.ftl">
 
         <#include "menu.ftl">

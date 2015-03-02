@@ -52,9 +52,11 @@ body {
     min-height: 100%; /* real browsers */
     margin: 0 auto;
 }
+/*
 body {
    background: #f3f3f0 url(../images/header-background.png) center 0 no-repeat; 
 }
+*/
 a:hover {
     text-decoration: none;
 }
@@ -493,7 +495,7 @@ ul#header-nav li {
     padding-right: 10px;
     border-right: 1px solid #7c7d7f;
     font-size: .7em;
-    color: #fff;
+    color: #000;
 }
 ul#header-nav li.last {
     border-right: none;
@@ -504,7 +506,7 @@ ul#header-nav li:last-child {
     border-right: none;
 }
 ul#header-nav a {
-    color: #fff;
+    color: #000;
 }
 ul#header-nav a:link,
 ul#header-nav a:visited {
@@ -1477,9 +1479,13 @@ article.property ul.property-list li a {
     position: absolute;
     left: -9999px;
 }
+
+/*
 a {
     text-decoration: underline
 }
+*/
+
 .middle {
     vertical-align: middle;
 }
