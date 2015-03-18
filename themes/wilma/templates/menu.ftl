@@ -71,7 +71,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </div> <!-- header-text-nav-wrap -->
 
 </header>
-<div style="height: 600px; width: 1200px;margin:auto;}">
+<div style="margin:auto;">
 
 <div id="wrapper-content" role="main">        
     <#if flash?has_content>

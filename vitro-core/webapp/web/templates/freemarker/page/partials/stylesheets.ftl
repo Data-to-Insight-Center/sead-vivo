@@ -32,6 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 <link rel="stylesheet" href="${urls.base}/css/vitro.css" />
 <link rel="stylesheet" href="${urls.base}/css/um-style.css" />
 <link rel="stylesheet" href="${urls.base}/css/seadmenu.css" />
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Raleway" />
 
 ${stylesheets.list()}
 
